@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+echo "Installing openssh-client..."
+
+'./apt-get' -y install 'openssh-client'

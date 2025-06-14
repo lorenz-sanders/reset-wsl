@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+echo "Installing sid update..."
+
+cat <<-'EOF' > '/etc/apt/sources.list'
+	deb http://deb.debian.org/debian sid main
+EOF
+
+'./apt--get' update
+'./apt-get' -y dist-upgrade
+'./apt-get' -y autopurge

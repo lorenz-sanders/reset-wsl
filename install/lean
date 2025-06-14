@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+username=$(cat /etc/passwd | sed '/home/!d;s/:.*//')
+location=$(pwd)
+
+echo "Installing lean..."
+
+su -l "${username}" -c "cd '${location}' && bash" <<-'EOF'
+	set -euo pipefail
+
+	'./elan' toolchain install `curl -s 'https://api.github.com/repos/leanprover/lean4/tags' | sed '/name/!d;/rc/d;s/.*\(v[^"]*\).*/\1/;q'`
+EOF

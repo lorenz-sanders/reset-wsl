@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+echo "Installing update..."
+
+'./apt--get' update
+'./apt-get' -y dist-upgrade
+'./apt-get' -y autopurge

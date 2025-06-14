@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+echo "Installing cache-curl..."
+
+cp 'cache-curl' '/usr/local/bin'
+
+mkdir -p '/var/tmp/curl'
+chmod 'a+rwx' '/var/tmp/curl'
