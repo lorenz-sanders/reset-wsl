@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+echo "Installing aria2c..."
+
+'./apt-get' -y install 'aria2'
