@@ -1,7 +1,7 @@
 @echo off
 
-if "%~1"=="" (set "profile=minimal") else (set "profile=%~1")
-if "%~2"=="" (set "distro=debian") else (set "distro=%~2")
+if "%~1"=="" (set "profile=dev") else (set "profile=%~1")
+if "%~2"=="" (set "distro=dev") else (set "distro=%~2")
 if "%~3"=="" (set "location=C:\WSL") else (set "location=%~3")
 if "%~4"=="" (set "image=debian.tar") else (set "image=%~4")
 
