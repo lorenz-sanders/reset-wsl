@@ -2,6 +2,15 @@
 
 set -euo pipefail
 
+username=$(cat /etc/passwd | sed '/home/!d;s/:.*//')
+location=$(pwd)
+
 echo "Installing vim..."
 
 './apt-get' -y install 'vim'
+
+su -l "${username}" -c "cd '${location}' && bash" <<-'EOF'
+	set -euo pipefail
+
+	cp '.vimrc' "${HOME}"
+EOF
