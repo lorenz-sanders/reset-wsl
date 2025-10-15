@@ -8,9 +8,6 @@ sed -i '/PS1.*\\\$/s/\\\$/\\n\0/' '/etc/skel/.bashrc'
 username=$(cat /etc/passwd | sed '/home/!d;s/:.*//')
 
 cat <<-EOF > '/etc/wsl.conf'
-	[boot]
-	systemd = true
-
 	[automount]
 	options = "metadata"
 
